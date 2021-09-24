@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ws-app-6846549876lklkhlh';
-
+  user = {};
   name = 'Hhjkhkjh';
   greet = `Hallo ${this.name}`;
 }

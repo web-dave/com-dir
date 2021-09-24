@@ -1,1 +1,7 @@
-<p>book-list works!</p>
+<h4>Available Books</h4>
+<app-book-preview
+  *ngFor="let b of books"
+  [book]="b"
+  (bookselected)="ping($event)"
+  (foo)="ping($event)"
+></app-book-preview>
