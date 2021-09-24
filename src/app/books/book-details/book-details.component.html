@@ -1,0 +1,13 @@
+<div class="card" *ngIf="book">
+  <img
+    [src]="book.cover"
+    style="width: 250px"
+    class="card-img-top"
+    [alt]="book.title"
+  />
+  <div class="card-body">
+    <h5 class="card-title">{{ book.title }}</h5>
+    <p class="card-text">{{ book.abstract }}</p>
+    <a routerLink=".." class="btn btn-primary">Go Home</a>
+  </div>
+</div>

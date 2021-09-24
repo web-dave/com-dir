@@ -1,7 +1,8 @@
 <h4>Available Books</h4>
-<app-book-preview
-  *ngFor="let b of books"
-  [book]="b"
-  (bookselected)="ping($event)"
-  (foo)="ping($event)"
-></app-book-preview>
+<ul class="list-group">
+  <app-book-preview
+    *ngFor="let b of books"
+    [book]="b"
+    (bookselected)="showBook($event)"
+  ></app-book-preview>
+</ul>

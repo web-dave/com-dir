@@ -1,8 +1,6 @@
-<span *ngIf="book">
-  <h3 (click)="sendFoo()">{{ book.title }}</h3>
-  <span>{{ book.isbn }}</span>
-
+<li class="list-group-item">
+  {{ book.title }}
   <button class="btn btn-success" (click)="selectThisBook($event)">
     Zeich ma'
   </button>
-</span>
+</li>
