@@ -8,6 +8,17 @@
   <div class="card-body">
     <h5 class="card-title">{{ book.title }}</h5>
     <p class="card-text">{{ book.abstract }}</p>
+  </div>
+  <div class="card-footer">
     <a routerLink=".." class="btn btn-primary">Go Home</a>
+    <span class="badge bg-secondary">{{ zahl | pages: "Seitenzahl" }}</span>
+    <span class="badge bg-secondary">{{ transform(zahl, "Seitenzahl") }}</span>
+    <a
+      class="btn btn-danger"
+      [myBook]="book"
+      appOrderBtn="Kaufen, Jetzt!11"
+    ></a>
   </div>
 </div>
+<!-- 
+{{ book | json }} -->
