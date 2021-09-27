@@ -1,0 +1,21 @@
+<form [formGroup]="bookForm" (ngSubmit)="saveBook()">
+  <div class="form-group" *ngFor="let key of keys">
+    <label [for]="key">{{ key }}</label>
+    <input type="text" [id]="key" [formControlName]="key" />
+    <div [hidden]="bookForm.controls[key].valid">Enter a {{ key }}</div>
+  </div>
+  <!-- <div class="form-group">
+    <label for="isbn">ISBN</label>
+    <input type="text" id="isbn" formControlName="isbn" />
+  </div>
+
+  <div [hidden]="bookForm.controls.isbn.valid">Not a valid ISBN</div> -->
+
+  <button type="submit" [disabled]="!bookForm.valid">Save</button>
+</form>
+<input type="text" [value]="name" (input)="name = $event.target.value" /><button
+  (click)="addControl()"
+>
+  +
+</button>
+{{ name }}

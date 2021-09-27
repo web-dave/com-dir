@@ -7,10 +7,20 @@ import { BookPreviewComponent } from './book-preview/book-preview.component';
 import { BookDetailsComponent } from './book-details/book-details.component';
 import { PagesPipe } from './pages.pipe';
 import { OrderBtnDirective } from './order-btn.directive';
+import { BookNewComponent } from './book-new/book-new.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [BooksComponent, BookListComponent, BookPreviewComponent, BookDetailsComponent, PagesPipe, OrderBtnDirective],
+  declarations: [
+    BooksComponent,
+    BookListComponent,
+    BookPreviewComponent,
+    BookDetailsComponent,
+    PagesPipe,
+    OrderBtnDirective,
+    BookNewComponent,
+  ],
   exports: [BooksComponent],
-  imports: [CommonModule, BooksRoutingModule],
+  imports: [CommonModule, BooksRoutingModule, ReactiveFormsModule],
 })
 export class BooksModule {}
