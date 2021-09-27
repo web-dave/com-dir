@@ -32,25 +32,29 @@ export class BookNewComponent implements OnInit {
 
   ngOnInit(): void {
     console.log(this.bookForm);
-    this.keys = Object.keys(this.bookForm.controls);
+    this.keys = ['title', 'isbn']; // Object.keys(this.bookForm.controls);
     this.bookForm.controls.cover.valueChanges.subscribe((data) =>
       console.log(data)
     );
   }
 
   saveBook() {
-    this.service.createBook(this.bookForm.value).subscribe();
+    this.service.createBook(this.bookForm.value).subscribe(() => {
+      this.bookForm.reset();
+
+      console.log(this.bookForm);
+    });
   }
 
   addControl() {
-    setTimeout(() => {
-      this.bookForm.controls.cover.setValidators(Validators.required);
-      this.bookForm.controls.cover.updateValueAndValidity();
-    }, 1500);
+    // setTimeout(() => {
+    //   this.bookForm.controls.cover.setValidators(Validators.required);
+    //   this.bookForm.controls.cover.updateValueAndValidity();
+    // }, 1500);
 
     this.bookForm.addControl(this.name, new FormControl(''));
     this.name = '';
     console.log(this.bookForm);
-    this.keys = Object.keys(this.bookForm.controls);
+    // this.keys = Object.keys(this.bookForm.controls);
   }
 }

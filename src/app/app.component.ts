@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -10,4 +11,7 @@ export class AppComponent {
   user = {};
   name = 'Hhjkhkjh';
   greet = `Hallo ${this.name}`;
+  constructor(private router: Router) {
+    // router.events.subscribe((data) => console.log(data));
+  }
 }
